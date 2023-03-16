@@ -259,13 +259,13 @@ namespace AvatarSearcher
             avi.ImageURL = avatar.imageUrl;
             avi.PCAssetURL = avatar.assetUrl;
             avi.ThumbnailURL = avatar.thumbnailImageUrl;
-            if (favoriteList.Contains(avi))
+            foreach (Avatar av in favoriteList)
             {
-                favoriteList.Remove(avi);
-                File.WriteAllText($"{Environment.CurrentDirectory}\\AvatarSearch\\favorites.json", JsonConvert.SerializeObject(favoriteList));
-                favoriteCategoryButton.transform.Find("Count_BG/Text_Number").gameObject.GetComponent<TextMeshProUGUIEx>().text =
-                    $"{favoriteList.Count}";
-                return;
+                if (av.AvatarID == avi.AvatarID)
+                {
+                    favoriteList.Remove(av);
+                    return;
+                }
             }
             favoriteList.Add(avi);
             File.WriteAllText($"{Environment.CurrentDirectory}\\AvatarSearch\\favorites.json", JsonConvert.SerializeObject(favoriteList));
