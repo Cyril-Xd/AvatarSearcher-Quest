@@ -149,6 +149,8 @@ namespace AvatarSearcher
             AddAction(searchButton,
                 delegate
                 {
+                    mainMenu.transform.Find(
+                        "Container/MMParent/Menu_Avatars").gameObject.GetComponent<MonoBehaviourPublicObLi1_bObDi2StAc1Unique>().Method_Public_Void_DataContextSelectorButton_0(categoryButton.GetComponent<DataContextSelectorButton>());
                     // replace with new keyboard at some point
                     VRCUiPopupManager.prop_VRCUiPopupManager_0.Method_Public_Void_String_String_InputType_Boolean_String_Action_3_String_List_1_KeyCode_Text_Action_String_Boolean_Action_1_VRCUiPopup_Boolean_Int32_0(
                         "Avatar Search", "", TMP_InputField.InputType.Standard, false, "Search", 
