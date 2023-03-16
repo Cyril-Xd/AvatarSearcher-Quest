@@ -1,7 +1,6 @@
 ﻿using System;
 using HarmonyLib;
 using System.Reflection;
-using TMPro;
 
 namespace AvatarSearcher
 {
@@ -20,6 +19,11 @@ namespace AvatarSearcher
             if (__0.ToString().Contains("Cell_MM_SidebarListItem (Avatar Search)"))
             {
                 AvatarSearch.LoadAvatars(true, true);
+            }
+
+            if (__0.ToString().Contains("Cell_MM_SidebarListItem (Extra Favorites)"))
+            {
+                AvatarSearch.LoadFavorites();
             }
         }
         
