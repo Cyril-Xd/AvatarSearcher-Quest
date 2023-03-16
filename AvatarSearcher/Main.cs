@@ -103,7 +103,7 @@ namespace AvatarSearcher
             favoriteButton.name = "Button_Favorite";
             favoriteButton.SetActive(true);
             favoriteButton.transform.Find("Text_ButtonName/Icon").gameObject.GetComponent<Image>().overrideSprite = buttonTemplate.transform.Find("Icon").gameObject.GetComponent<Image>().sprite;
-            favoriteButton.GetComponent<VRC.UI.Elements.Tooltips.UiTooltip>().field_Public_String_0 = "Add selected avatar to favorites";
+            favoriteButton.GetComponent<VRC.UI.Elements.Tooltips.UiTooltip>().field_Public_String_0 = "Add/Remove selected avatar to/from favorites";
             
             mainMenu.transform.Find(
                 "Container/MMParent/Menu_Avatars").gameObject.GetComponent<MainMenuAvatars>()._buttonGroup._buttons.Add(categoryButton.GetComponent<SidebarListItem>());
@@ -259,7 +259,14 @@ namespace AvatarSearcher
             avi.ImageURL = avatar.imageUrl;
             avi.PCAssetURL = avatar.assetUrl;
             avi.ThumbnailURL = avatar.thumbnailImageUrl;
-            if(favoriteList.Contains(avi)) return;
+            if (favoriteList.Contains(avi))
+            {
+                favoriteList.Remove(avi);
+                File.WriteAllText($"{Environment.CurrentDirectory}\\AvatarSearch\\favorites.json", JsonConvert.SerializeObject(favoriteList));
+                favoriteCategoryButton.transform.Find("Count_BG/Text_Number").gameObject.GetComponent<TextMeshProUGUIEx>().text =
+                    $"{favoriteList.Count}";
+                return;
+            }
             favoriteList.Add(avi);
             File.WriteAllText($"{Environment.CurrentDirectory}\\AvatarSearch\\favorites.json", JsonConvert.SerializeObject(favoriteList));
             favoriteCategoryButton.transform.Find("Count_BG/Text_Number").gameObject.GetComponent<TextMeshProUGUIEx>().text =
