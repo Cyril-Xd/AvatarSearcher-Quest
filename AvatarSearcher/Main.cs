@@ -92,6 +92,17 @@ namespace AvatarSearcher
             searchButton.transform.Find("Text_ButtonName/FavoriteIcon").gameObject.SetActive(true);
             searchButton.transform.Find("Text_ButtonName/FavoriteIcon").name = "SearchIcon";
 
+            GameObject searchAuthorTemplate = mainMenu.transform
+                .Find("Container/MMParent/Menu_UserDetail/ScrollRect/Viewport/VerticalLayoutGroup/Row3/CellGrid_MM_Content/AddANote").gameObject;
+            
+            GameObject searchAuthor = Object.Instantiate(searchAuthorTemplate, searchAuthorTemplate.transform.parent);
+            searchAuthor.name = "Button_SearchAuthor";
+            searchAuthor.transform.Find("Text_ButtonName").gameObject.GetComponent<TextMeshProUGUIEx>().text = "Search Avatars";
+            searchAuthor.GetComponent<VRC.UI.Elements.Tooltips.UiTooltip>().field_Public_String_0 = "Search for the user's avatars";
+            searchAuthor.transform.Find("Text_ButtonName/Icon").gameObject.GetComponent<Image>().overrideSprite = mainMenu.transform
+                .Find("Container/PageButtons/HorizontalLayoutGroup/Page_Search/Icon").gameObject.GetComponent<Image>()
+                .sprite;
+
             GameObject.Destroy(searchButton.transform.Find("Text_ButtonName/UnfavoriteIcon").gameObject);
             GameObject.Destroy(searchButton.transform.Find("Text_ButtonName/RemoveIcon").gameObject);
             GameObject.Destroy(searchButton.transform.Find("Badge").gameObject);
@@ -138,9 +149,9 @@ namespace AvatarSearcher
             searchButton.GetComponent<Button>().onClick = new Button.ButtonClickedEvent();
 
             favoriteButton.GetComponent<Button>().onClick = new Button.ButtonClickedEvent();
-            
-            
-            
+
+            searchAuthor.GetComponent<Button>().onClick = new Button.ButtonClickedEvent();
+
             System.Action<string, List<KeyCode>, Text> method = delegate(string s, List<KeyCode> k, Text t)
             {
                 SearchAvatars(s);
@@ -163,12 +174,29 @@ namespace AvatarSearcher
                     .GetComponent<MonoBehaviourPublicSiGaRuGaAcRu4StAvObUnique>().field_Internal_ApiAvatar_0);
             });
             
+            AddAction(searchAuthor, delegate
+            {
+                string id = mainMenu.transform.Find("Container/MMParent/Menu_UserDetail/").gameObject
+                    .GetComponent<UserDetailsMenu>().field_Private_InterfacePublicAbstractStCoStBoObSt1BoSi1Unique_0
+                    .prop_String_0;
+                SearchAuthorAvatars(id);
+            });
+            
         }
 
         private static async void SearchAvatars(string s)
         {
             avatarList = await SARSUtils.Search(s);
             LoadAvatars();
+        }
+
+        private static async void SearchAuthorAvatars(string s)
+        {
+            mainMenu.transform.Find("Container/PageButtons/HorizontalLayoutGroup/Page_Avatars").gameObject.GetComponent<Button>().Press();
+            mainMenu.transform.Find(
+                "Container/MMParent/Menu_Avatars").gameObject.GetComponent<MonoBehaviourPublicObLi1_bObDi2StAc1Unique>().Method_Public_Void_DataContextSelectorButton_0(categoryButton.GetComponent<DataContextSelectorButton>());
+            avatarList = await SARSUtils.SearchAuthor(s);
+            LoadAvatars(true);
         }
 
         public static async void LoadAvatars(bool wait = false, bool changeTitle = false)
@@ -217,9 +245,9 @@ namespace AvatarSearcher
 
             //moves the layout group a bit to update the thing and show the avatars without user interaction
             if(wait)
-                await Task.Delay(100);
+                await Task.Delay(200);
             else
-                await Task.Delay(300);
+                await Task.Delay(400);
             
             mainMenu.transform
                 .Find(
