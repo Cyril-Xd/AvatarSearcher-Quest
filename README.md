@@ -1,3 +1,7 @@
+# GITHUB ISNT FULLY UPDATED
+This repo will gradually get updated throughout my day.
+At this time please input your key manually into UserData/AvatarSearch/APIKey.cum
+
 # AvatarSearcher
 Allows you to search avatars using SARS/ARES
 
