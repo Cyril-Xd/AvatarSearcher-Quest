@@ -1,6 +1,7 @@
 # GITHUB ISNT FULLY UPDATED
 This repo will gradually get updated throughout my day.
 At this time please input your key manually into UserData/AvatarSearch/APIKey.cum
+APIKey.cum is just a .txt file renamed. Make it yourself.
 
 Please get your key from the [SARS discord server](https://discord.gg/AvatarRecovery)
 
