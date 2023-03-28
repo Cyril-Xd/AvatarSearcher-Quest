@@ -16,5 +16,5 @@ it shows the avatars twice and im too lazy to fix it
 
 https://user-images.githubusercontent.com/52731127/225898649-5738a9ed-7e5f-47dd-b9b0-c2f8d538f75f.mp4
 
-#Quest version
+# Quest version
 Ported by CyrilXD and Neeko
