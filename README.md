@@ -2,7 +2,7 @@
 This repo will gradually get updated throughout my day.
 At this time please input your key manually into UserData/AvatarSearch/APIKey.cum
 
-Please get your key from the SARS discord server
+Please get your key from the [SARS discord server](discord.gg/AvatarRecovery)
 
 # AvatarSearcher
 Allows you to search avatars using SARS/ARES
