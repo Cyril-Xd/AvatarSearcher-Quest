@@ -1,3 +1,5 @@
+# THIS MOD IS CURRENTLY OUTDATED AND SEARCH WILL NOT WORK
+
 # GITHUB ISNT FULLY UPDATED
 This repo will gradually get updated throughout my day.
 At this time please input your key manually into UserData/AvatarSearch/APIKey.cum
