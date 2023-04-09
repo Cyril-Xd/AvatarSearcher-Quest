@@ -1,6 +1,7 @@
-﻿using System;
+using System;
 using HarmonyLib;
 using System.Reflection;
+using VRC.UI.Elements.Controls;
 
 namespace AvatarSearcher
 {
@@ -10,7 +11,7 @@ namespace AvatarSearcher
 
         public static void OnInitialize()
         {
-            HarmonyInstance.Patch(typeof(MonoBehaviourPublicObLi1_bObDi2StAc1Unique).GetMethod("Method_Public_Void_DataContextSelectorButton_0"), null, 
+            HarmonyInstance.Patch(typeof(DataContextSelectorGroup).GetMethod("Method_Public_Void_DataContextSelectorButton_0"), null, 
                 GetLocalPatch("OnCategoryButtonClicked", typeof(Patches)));
         }
         
