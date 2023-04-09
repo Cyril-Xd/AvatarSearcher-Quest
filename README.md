@@ -1,13 +1,8 @@
 # THIS MOD IS CURRENTLY OUTDATED AND SEARCH WILL NOT WORK
 
 # GITHUB ISNT FULLY UPDATED
-This repo will gradually get updated throughout my day.
-At this time please input your key manually into UserData/AvatarSearch/APIKey.cum
-APIKey.cum is just a .txt file renamed. Make it yourself.
+The next release of this mod will not require any SARS key, and will simply go into your mods folder.
 
-Please get your key from the [SARS discord server](https://discord.gg/AvatarRecovery)
-Don't bother the SARS team with setting up this mod/service.
-We only use their API and they aren't affiliated or involved with the development of this mod in any way. 
 
 # AvatarSearcher
 Allows you to search avatars using SARS/ARES
