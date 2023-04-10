@@ -1,8 +1,7 @@
-# THIS MOD IS CURRENTLY OUTDATED AND SEARCH WILL NOT WORK
 
 # GITHUB ISNT FULLY UPDATED
 The next release of this mod will not require any SARS key, and will simply go into your mods folder.
-
+Thanks for fixing it again Neeko
 
 # AvatarSearcher
 Allows you to search avatars using SARS/ARES
