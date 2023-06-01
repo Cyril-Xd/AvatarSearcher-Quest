@@ -1,12 +1,10 @@
 
 # GITHUB ISNT FULLY UPDATED
-The next release of this mod will not require any SARS key, and will simply go into your mods folder.
+It does not require SARS/ARES APIKey. It uses public SARS/ARES API now.
 Thanks for fixing it again Neeko
 
 # AvatarSearcher
-Allows you to search avatars using SARS/ARES
-
-**YOU NEED A [SARS/ARES](https://github.com/Dean2k/S.A.R.S/tree/master/SARS) API KEY FOR THIS MOD**
+Allows you to search avatars by name/author using SARS/ARES
 
 ## Search preview
 
